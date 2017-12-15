@@ -1,57 +1,57 @@
-<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
 
     <div class="form-group">
         <label for="c-username" class="control-label col-xs-12 col-sm-2">{:__('Username')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-username" data-rule="required" class="form-control" name="row[username]" type="text" value="{$row.username}">
+            <input id="c-username" data-rule="required" class="form-control" name="row[username]" type="text" value="">
         </div>
     </div>
     <div class="form-group">
         <label for="c-password" class="control-label col-xs-12 col-sm-2">{:__('Password')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-password" data-rule="required" class="form-control" name="row[password]" type="text" value="{$row.password}">
+            <input id="c-password" data-rule="required" class="form-control" name="row[password]" type="text" value="">
         </div>
     </div>
     <div class="form-group">
         <label for="c-salt" class="control-label col-xs-12 col-sm-2">{:__('Salt')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-salt" data-rule="required" class="form-control" name="row[salt]" type="text" value="{$row.salt}">
+            <input id="c-salt" data-rule="required" class="form-control" name="row[salt]" type="text" value="">
         </div>
     </div>
     <div class="form-group">
         <label for="c-mobile" class="control-label col-xs-12 col-sm-2">{:__('Mobile')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-mobile" data-rule="required" class="form-control" name="row[mobile]" type="text" value="{$row.mobile}">
+            <input id="c-mobile" data-rule="required" class="form-control" name="row[mobile]" type="text" value="">
         </div>
     </div>
     <div class="form-group">
         <label for="c-system" class="control-label col-xs-12 col-sm-2">{:__('System')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-system" data-rule="required" class="form-control" name="row[system]" type="number" value="{$row.system}">
+            <input id="c-system" data-rule="required" class="form-control" name="row[system]" type="number">
         </div>
     </div>
     <div class="form-group">
         <label for="c-prevtime" class="control-label col-xs-12 col-sm-2">{:__('Prevtime')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-prevtime" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[prevtime]" type="text" value="{$row.prevtime|datetime}">
+            <input id="c-prevtime" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[prevtime]" type="text" value="{:date('Y-m-d H:i:s')}">
         </div>
     </div>
     <div class="form-group">
         <label for="c-jointime" class="control-label col-xs-12 col-sm-2">{:__('Jointime')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-jointime" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[jointime]" type="text" value="{$row.jointime|datetime}">
+            <input id="c-jointime" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[jointime]" type="text" value="{:date('Y-m-d H:i:s')}">
         </div>
     </div>
     <div class="form-group">
         <label for="c-token" class="control-label col-xs-12 col-sm-2">{:__('Token')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-token" data-rule="required" class="form-control" name="row[token]" type="text" value="{$row.token}">
+            <input id="c-token" data-rule="required" class="form-control" name="row[token]" type="text" value="">
         </div>
     </div>
     <div class="form-group">
         <label for="c-status" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-status" data-rule="required" class="form-control" name="row[status]" type="text" value="{$row.status}">
+            <input id="c-status" data-rule="required" class="form-control" name="row[status]" type="text" value="">
         </div>
     </div>
     <div class="form-group layer-footer">

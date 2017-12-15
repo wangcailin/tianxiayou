@@ -5,12 +5,12 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             // 初始化表格参数配置
             Table.api.init({
                 extend: {
-                    index_url: 'user/index',
-                    add_url: 'user/add',
-                    edit_url: 'user/edit',
-                    del_url: 'user/del',
-                    multi_url: 'user/multi',
-                    table: 'user',
+                    index_url: 'update/kernel/index',
+                    add_url: 'update/kernel/add',
+                    edit_url: 'update/kernel/edit',
+                    del_url: 'update/kernel/del',
+                    multi_url: 'update/kernel/multi',
+                    table: 'update_kernel',
                 }
             });
 
@@ -25,17 +25,10 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'username', title: __('Username')},
-                        {field: 'password', title: __('Password')},
-                        {field: 'salt', title: __('Salt')},
-                        {field: 'mobile', title: __('Mobile')},
-                        {field: 'system', title: __('System')},
-                        {field: 'prevtime', title: __('Prevtime'), formatter: Table.api.formatter.datetime},
-                        {field: 'jointime', title: __('Jointime'), formatter: Table.api.formatter.datetime},
-                        {field: 'createtime', title: __('Createtime'), formatter: Table.api.formatter.datetime},
-                        {field: 'updatetime', title: __('Updatetime'), formatter: Table.api.formatter.datetime},
-                        {field: 'token', title: __('Token')},
-                        {field: 'status', title: __('Status'), formatter: Table.api.formatter.status},
+                        {field: 'link', title: __('Link')},
+                        {field: 'key', title: __('Key')},
+                        {field: 'file_md5', title: __('File_md5')},
+                        {field: 'vercode', title: __('Vercode')},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]

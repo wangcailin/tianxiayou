@@ -25,7 +25,7 @@ return array (
     'basic' => 'Basic',
     'email' => 'Email',
     'dictionary' => 'Dictionary',
-    'user' => 'User',
+    'outreach' => 'Outreach',
     'example' => 'Example',
   ),
   'mail_type' => '1',

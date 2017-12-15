@@ -5,12 +5,12 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             // 初始化表格参数配置
             Table.api.init({
                 extend: {
-                    index_url: 'user/index',
-                    add_url: 'user/add',
-                    edit_url: 'user/edit',
-                    del_url: 'user/del',
-                    multi_url: 'user/multi',
-                    table: 'user',
+                    index_url: 'order/index',
+                    add_url: 'order/add',
+                    edit_url: 'order/edit',
+                    del_url: 'order/del',
+                    multi_url: 'order/multi',
+                    table: 'order',
                 }
             });
 
@@ -25,16 +25,14 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'username', title: __('Username')},
-                        {field: 'password', title: __('Password')},
-                        {field: 'salt', title: __('Salt')},
-                        {field: 'mobile', title: __('Mobile')},
+                        {field: 'order_sn', title: __('Order_sn')},
+                        {field: 'uid', title: __('Uid')},
+                        {field: 'pay_type', title: __('Pay_type')},
+                        {field: 'amount', title: __('Amount')},
+                        {field: 'code', title: __('Code')},
                         {field: 'system', title: __('System')},
-                        {field: 'prevtime', title: __('Prevtime'), formatter: Table.api.formatter.datetime},
-                        {field: 'jointime', title: __('Jointime'), formatter: Table.api.formatter.datetime},
-                        {field: 'createtime', title: __('Createtime'), formatter: Table.api.formatter.datetime},
-                        {field: 'updatetime', title: __('Updatetime'), formatter: Table.api.formatter.datetime},
-                        {field: 'token', title: __('Token')},
+                        {field: 'add_time', title: __('Add_time'), formatter: Table.api.formatter.datetime},
+                        {field: 'pay_time', title: __('Pay_time'), formatter: Table.api.formatter.datetime},
                         {field: 'status', title: __('Status'), formatter: Table.api.formatter.status},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]

@@ -11,7 +11,7 @@ return [
     'Email'                       => '邮件配置',
     'Attachment'                  => '附件配置',
     'Dictionary'                  => '字典配置',
-    'User'                        => '会员配置',
+    'Outreach'                    => '第三方配置',
     'Example'                     => '示例分组',
     'Extend'                      => '扩展属性',
     'String'                      => '字符',

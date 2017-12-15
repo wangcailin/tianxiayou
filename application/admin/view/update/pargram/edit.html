@@ -1,0 +1,46 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-vercode" class="control-label col-xs-12 col-sm-2">{:__('Vercode')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-vercode" class="form-control" name="row[vercode]" type="text" value="{$row.vercode}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-vername" class="control-label col-xs-12 col-sm-2">{:__('Vername')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-vername" class="form-control" name="row[vername]" type="text" value="{$row.vername}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-description" class="control-label col-xs-12 col-sm-2">{:__('Description')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-description" class="form-control " rows="5" name="row[description]" cols="50">{$row.description}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-isforce" class="control-label col-xs-12 col-sm-2">{:__('Isforce')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-isforce" class="form-control" name="row[isforce]" type="number" value="{$row.isforce}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-link" class="control-label col-xs-12 col-sm-2">{:__('Link')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-link" class="form-control" name="row[link]" type="text" value="{$row.link}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-file_md5" class="control-label col-xs-12 col-sm-2">{:__('File_md5')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-file_md5" class="form-control" name="row[file_md5]" type="text" value="{$row.file_md5}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

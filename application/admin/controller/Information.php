@@ -8,22 +8,22 @@ use think\Controller;
 use think\Request;
 
 /**
- * 用户管理
+ * 基础信息获取管理
  *
- * @icon user
+ * @icon fa fa-circle-o
  */
-class User extends Backend
+class Information extends Backend
 {
     
     /**
-     * User模型对象
+     * Information模型对象
      */
     protected $model = null;
 
     public function _initialize()
     {
         parent::_initialize();
-        $this->model = model('User');
+        $this->model = model('Information');
 
     }
     

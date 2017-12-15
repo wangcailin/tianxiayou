@@ -21,7 +21,7 @@
         "endroid/qrcode": "^1.9",
         "topthink/think-captcha": "^1.0",
         "mtdowling/cron-expression": "^1.2",
-        "phpmailer/phpmailer": "^5.2",
+        "phpmailer": "^5.2",
         "karsonzhang/fastadmin-addons": "dev-master",
         "overtrue/pinyin": "~3.0",
         "phpoffice/phpexcel": "^1.8"

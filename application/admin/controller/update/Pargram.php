@@ -1,6 +1,6 @@
 <?php
 
-namespace app\admin\controller;
+namespace app\admin\controller\update;
 
 use app\common\controller\Backend;
 
@@ -8,22 +8,22 @@ use think\Controller;
 use think\Request;
 
 /**
- * 用户管理
+ * 程序更新管理
  *
- * @icon user
+ * @icon fa fa-circle-o
  */
-class User extends Backend
+class Pargram extends Backend
 {
     
     /**
-     * User模型对象
+     * UpdatePargram模型对象
      */
     protected $model = null;
 
     public function _initialize()
     {
         parent::_initialize();
-        $this->model = model('User');
+        $this->model = model('UpdatePargram');
 
     }
     
