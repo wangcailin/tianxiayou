@@ -19,6 +19,8 @@ class User extends Backend
      * User模型对象
      */
     protected $model = null;
+    protected $searchFields = 'username,mobile';
+
 
     public function _initialize()
     {
