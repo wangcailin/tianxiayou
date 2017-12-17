@@ -27,7 +27,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'id', title: __('Id')},
                         {field: 'vercode', title: __('Vercode')},
                         {field: 'vername', title: __('Vername')},
-                        {field: 'isforce', title: __('Isforce')},
+                        {field: 'isforce', title: __('Isforce'), formatter: Controller.api.formatter.isforce},
                         {field: 'link', title: __('Link')},
                         {field: 'file_md5', title: __('File_md5')},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
@@ -47,6 +47,15 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         api: {
             bindevent: function () {
                 Form.api.bindevent($("form[role=form]"));
+            },
+            formatter: {
+                isforce: function (value, row, index) {
+                    if (value == '0'){
+                        return '否'
+                    }else{
+                        return '是'
+                    }
+                },
             }
         }
     };

@@ -1,6 +1,11 @@
 <?php
 
 return [
+    'Alidayu Key'                 => '阿里大于 Key',
+    'Alidayu Key Secret'          => '阿里大于 Key Secret',
+    'Ali Push Key Id'             => '阿里推送 Key Id',
+    'Ali Push Key Secret'         => '阿里推送 Key Secret',
+    'Ali Push Key'                => '阿里推送 APP Key',
     'Name'                        => '变量名',
     'Tip'                         => '提示信息',
     'Group'                       => '分组',
@@ -11,7 +16,7 @@ return [
     'Email'                       => '邮件配置',
     'Attachment'                  => '附件配置',
     'Dictionary'                  => '字典配置',
-    'Outreach'                    => '第三方配置',
+    'Others'                      => '第三方配置',
     'Example'                     => '示例分组',
     'Extend'                      => '扩展属性',
     'String'                      => '字符',
