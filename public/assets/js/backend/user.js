@@ -27,8 +27,8 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'id', title: __('Id'), operate: false},
                         {field: 'username', title: __('Username'), operate: false},
                         {field: 'mobile', title: __('Mobile'), operate: false},
-                        {field: 'system', title: __('System'), searchList: {'0': __('Android'), '1': __('iOS')}, formatter: Table.api.formatter.sys},
-                        {field: 'vip', title: __('Vip'), searchList: {'0': __('否'), '1': __('是')}, formatter: Table.api.formatter.vip},
+                        {field: 'system', title: __('System'), searchList: {'0': __('Android'), '1': __('iOS')}, formatter: Controller.api.formatter.sys},
+                        {field: 'vip', title: __('Vip'), searchList: {'0': __('否'), '1': __('是')}, formatter: Controller.api.formatter.vip},
                         {field: 'vip_expire_time', title: __('Vip_expire_time'), formatter: Table.api.formatter.datetime, operate: 'BETWEEN', type: 'datetime', addclass: 'datetimepicker', data: 'data-date-format="YYYY-MM-DD"'},
                         {field: 'prevtime', title: __('Prevtime'), formatter: Table.api.formatter.datetime, operate: 'BETWEEN', type: 'datetime', addclass: 'datetimepicker', data: 'data-date-format="YYYY-MM-DD"'},
                         {field: 'createtime', title: __('Createtime'), formatter: Table.api.formatter.datetime, operate: 'BETWEEN', type: 'datetime', addclass: 'datetimepicker', data: 'data-date-format="YYYY-MM-DD"'},
@@ -56,14 +56,14 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     if (value == 0){
                         return '<span class="label label-success">Android</span>';
                     }else{
-                        return '<span class="label label-danger">iOS</span>';
+                        return '<span class="label label-info">iOS</span>';
                     }
                 },
                 vip: function (value, row, index) {
                     if (value == 0){
-                        return '<span class="label label-success">否</span>';
+                        return '<span class="label label-danger">否</span>';
                     }else{
-                        return '<span class="label label-danger">是</span>';
+                        return '<span class="label label-warning">是</span>';
                     }
                 }
             }

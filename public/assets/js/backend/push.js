@@ -26,11 +26,13 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
                         {field: 'title', title: __('Title')},
-                        {field: 'status', title: __('Status'), formatter: Table.api.formatter.status},
+                        {field: 'content', title: __('Content')},
                         {field: 'time', title: __('Time'), formatter: Table.api.formatter.datetime},
+                        {field: 'status', title: __('Status'), formatter: Controller.api.formatter.status},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
-                ]
+                ],
+                commonSearch: false
             });
 
             // 为表格绑定事件
@@ -45,6 +47,15 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         api: {
             bindevent: function () {
                 Form.api.bindevent($("form[role=form]"));
+            },
+            formatter: {
+                status: function (value, row, index) {
+                    if (value == 0){
+                        return '<span class="label label-danger">暂不推送</span>';
+                    }else if (value == 1){
+                        return '<span class="label label-success">立即推送</span>';
+                    }
+                }
             }
         }
     };

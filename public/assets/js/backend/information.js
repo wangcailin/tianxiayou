@@ -25,8 +25,8 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'type', title: __('Type')},
-                        {field: 'page', title: __('Page')},
+                        {field: 'type', title: __('Type'), formatter: Controller.api.formatter.type},
+                        {field: 'page', title: __('Page'), formatter: Controller.api.formatter.page},
                         {field: 'images', title: __('Images'), formatter: Table.api.formatter.images},
                         {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},
                         {field: 'actiontype', title: __('Actiontype')},
@@ -46,6 +46,23 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             Controller.api.bindevent();
         },
         api: {
+            formatter: {
+                type: function (value, row, index) {
+                    console.info(value)
+                    if (value == 0){
+                        return '<span class="label label-success">广告</span>';
+                    }
+                },
+                page: function (value, row, index) {
+                    if (value == 0){
+                        return 'splash页';
+                    }else if(value == 1){
+                        return '首页';
+                    }else {
+                        return '切换页';
+                    }
+                }
+            },
             bindevent: function () {
                 Form.api.bindevent($("form[role=form]"));
             }

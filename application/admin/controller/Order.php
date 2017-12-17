@@ -19,6 +19,7 @@ class Order extends Backend
      * Order模型对象
      */
     protected $model = null;
+    protected $searchFields = 'order_sn,username,code';
 
     public function _initialize()
     {

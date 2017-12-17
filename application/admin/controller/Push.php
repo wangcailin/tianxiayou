@@ -19,6 +19,7 @@ class Push extends Backend
      * Push模型对象
      */
     protected $model = null;
+    protected $searchFields = 'title,content';
 
     public function _initialize()
     {

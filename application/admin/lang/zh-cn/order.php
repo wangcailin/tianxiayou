@@ -2,7 +2,7 @@
 
 return [
     'Order_sn'  =>  '订单号',
-    'Uid'  =>  '用户ID',
+    'Username'  =>  '用户名',
     'Pay_type'  =>  '付款类型',
     'Amount'  =>  '订单金额',
     'Code'  =>  '机器码',
