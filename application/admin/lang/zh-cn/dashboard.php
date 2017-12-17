@@ -12,7 +12,7 @@ return [
     'Today user signup'     => '今日注册',
     'Today user login'      => '今日登录',
     'Today order'           => '今日订单',
-    'Unsettle order'        => '未处理订单',
+    'Unsettle order'        => '未支付订单',
     'Seven dnu'             => '七日新增',
     'Seven dau'             => '七日活跃',
     'Custom zone'           => '这里是你的自定义数据',
