@@ -19,6 +19,7 @@ class Kernel extends Backend
      * UpdateKernel模型对象
      */
     protected $model = null;
+    protected $searchFields = 'link,key,file_md5,vercode';
 
     public function _initialize()
     {

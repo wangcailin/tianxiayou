@@ -24,13 +24,13 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 columns: [
                     [
                         {checkbox: true},
-                        {field: 'id', title: __('Id')},
-                        {field: 'type', title: __('Type'), formatter: Controller.api.formatter.type},
-                        {field: 'page', title: __('Page'), formatter: Controller.api.formatter.page},
-                        {field: 'images', title: __('Images'), formatter: Table.api.formatter.images},
-                        {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},
-                        {field: 'actiontype', title: __('Actiontype')},
-                        {field: 'version', title: __('Version')},
+                        {field: 'id', title: __('Id'), operate: false},
+                        {field: 'type', title: __('Type'), searchList: {'0': __('广告')}, formatter: Controller.api.formatter.type},
+                        {field: 'page', title: __('Page'), searchList: {'0': __('splash页'), '1': __('首页'), '2': __('切换页')}, formatter: Controller.api.formatter.page},
+                        {field: 'images', title: __('Images'), operate: false, formatter: Table.api.formatter.images},
+                        {field: 'url', title: __('Url'), operate: false, formatter: Table.api.formatter.url},
+                        {field: 'actiontype', title: __('Actiontype'), searchList: {'0': __('网页打开'), '1': __('打开应用'), '2': __('播放视频')}, formatter: Controller.api.formatter.actiontype},
+                        {field: 'version', title: __('Version'), operate: false},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
@@ -48,7 +48,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         api: {
             formatter: {
                 type: function (value, row, index) {
-                    console.info(value)
                     if (value == 0){
                         return '<span class="label label-success">广告</span>';
                     }
@@ -60,6 +59,15 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         return '首页';
                     }else {
                         return '切换页';
+                    }
+                },
+                actiontype: function (value, row, index) {
+                    if (value == 0){
+                        return '网页打开';
+                    }else if(value == 1){
+                        return '打开应用';
+                    }else {
+                        return '播放视频';
                     }
                 }
             },

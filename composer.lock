@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "19e4d13bea967f90d1b62c06cb9e9026",
+    "content-hash": "aead5485d18d583a0d27b2d1110d0d54",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -972,6 +972,60 @@
                 "psr-3"
             ],
             "time": "2016-10-10T12:19:37+00:00"
+        },
+        {
+            "name": "riverslei/payment",
+            "version": "v4.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helei112g/payment.git",
+                "reference": "f0d86d3bf492b0f1111e1d9969b264bb00608f5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helei112g/payment/zipball/f0d86d3bf492b0f1111e1d9969b264bb00608f5c",
+                "reference": "f0d86d3bf492b0f1111e1d9969b264bb00608f5c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-bcmath": "*",
+                "ext-mbstring": "*",
+                "guzzlehttp/guzzle": "~6.0",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "codeception/codeception": "*",
+                "endroid/qrcode": "~1.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Payment\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "helei",
+                    "email": "dayugog@gmail.com",
+                    "homepage": "https://helei112g.github.io/categories/payment-3/"
+                }
+            ],
+            "description": "支付宝支付、微信支付、招商一网通支付php SDK。方便快速接入，最完整的开源支付 php sdk",
+            "homepage": "https://helei112g.github.io/categories/payment-3/",
+            "keywords": [
+                "alipay",
+                "weixin",
+                "一网通",
+                "微信支付",
+                "招商一网通",
+                "支付宝支付",
+                "集成支付接口SDK"
+            ],
+            "time": "2017-11-09T01:49:05+00:00"
         },
         {
             "name": "symfony/http-foundation",

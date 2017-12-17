@@ -19,6 +19,7 @@ class Pargram extends Backend
      * UpdatePargram模型对象
      */
     protected $model = null;
+    protected $searchFields = 'vercode,vername,isforce,link,file_md5';
 
     public function _initialize()
     {
