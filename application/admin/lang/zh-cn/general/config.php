@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'Pay'                         => '支付参数',
     'Alidayu Key'                 => '阿里大于 Key',
     'Alidayu Key Secret'          => '阿里大于 Key Secret',
     'Ali Push Key Id'             => '阿里推送 Key Id',

@@ -27,13 +27,13 @@
     <div class="form-group">
         <label for="c-system" class="control-label col-xs-12 col-sm-2">{:__('System')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-system" data-rule="required" class="form-control" name="row[system]" type="number" value="{$row.system}">
+            {:build_radios('row[system]', ['0'=>__('Android'), '1'=>__('iOS')], $row.system)}
         </div>
     </div>
     <div class="form-group">
         <label for="c-vip" class="control-label col-xs-12 col-sm-2">{:__('Vip')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-vip" data-rule="required" class="form-control" name="row[vip]" type="number" value="{$row.vip}">
+            {:build_radios('row[vip]', ['0'=>__('否'), '1'=>__('是')], $row.vip)}
         </div>
     </div>
     <div class="form-group">
@@ -45,7 +45,7 @@
     <div class="form-group">
         <label for="c-status" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-status" data-rule="required" class="form-control" name="row[status]" type="text" value="{$row.status}">
+            {:build_radios('row[status]', ['normal'=>__('Normal'), 'hidden'=>__('Hidden')], $row.status)}
         </div>
     </div>
     <div class="form-group layer-footer">
