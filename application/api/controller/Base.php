@@ -34,4 +34,9 @@ class Base extends Api
         $decrypted = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $key, $encryptedData, MCRYPT_MODE_CBC, $iv);
         echo($decrypted);
     }
+
+    public function index()
+    {
+        
+    }
 }
