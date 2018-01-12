@@ -32,7 +32,7 @@ class Base extends Api
         //解密
         $encryptedData = base64_decode($body);
         $decrypted = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $key, $encryptedData, MCRYPT_MODE_CBC, $iv);
-
+        $decrypted = json_encode($decrypted);
         var_dump($decrypted);die;
 
         $data['data'] = $decrypted;
