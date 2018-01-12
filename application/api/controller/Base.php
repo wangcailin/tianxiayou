@@ -34,8 +34,8 @@ class Base extends Api
         $decrypted = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $key, $encryptedData, MCRYPT_MODE_CBC, $iv);
 
         $decrypted = $this->pkcs5_unpad($decrypted);
-
-        var_dump(strlen($decrypted));die;
+        $decrypted = json_decode($decrypted, true);
+        var_dump($decrypted);die;
     }
 
     public function pkcs5_unpad($text)
