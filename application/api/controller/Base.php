@@ -32,13 +32,18 @@ class Base extends Api
         //解密
         $encryptedData = base64_decode($body);
         $decrypted = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $key, $encryptedData, MCRYPT_MODE_CBC, $iv);
-        var_dump(json_encode($decrypted));die;
 
-        $data['data'] = $decrypted;
-        $data['leng'] = strlen($decrypted);
-        $data = json_encode($data);
-        file_put_contents('versionData.json', $data);
-        return $decrypted;
+        $decrypted = $this->pkcs5_unpad($decrypted);
+
+        var_dump(strlen($decrypted));die;
+    }
+
+    public function pkcs5_unpad($text)
+    {
+        $pad = ord($text{strlen($text)-1});
+        if ($pad > strlen($text)) return false;
+        if (strspn($text, chr($pad), strlen($text) - $pad) != $pad) return false;
+        return substr($text, 0, -1 * $pad);
     }
 
     public function index()
