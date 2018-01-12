@@ -35,7 +35,10 @@ class Base extends Api
 
         $decrypted = $this->pkcs5_unpad($decrypted);
         $decrypted = json_decode($decrypted, true);
-        var_dump($decrypted);die;
+
+        var_dump(crc32($decrypted['data']));
+        var_dump($t2);
+        die;
     }
 
     public function pkcs5_unpad($text)
