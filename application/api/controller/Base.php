@@ -29,10 +29,14 @@ class Base extends Api
         $t1 = input('t1');  // 时间戳
         $t2 = input('t2');  // CRC校验值
 
-        //解密
+        $module = mcrypt_module_open(MCRYPT_RIJNDAEL_128, '', MCRYPT_MODE_CBC, $iv);
+        mcrypt_generic_init($module, $key, $iv);
         $encryptedData = base64_decode($body);
-        $decrypted = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $key, $encryptedData, MCRYPT_MODE_CBC, $iv);
-        var_dump(strlen($decrypted));die;
+        $encryptedData = mdecrypt_generic($module, $encryptedData);
+//        //解密
+//        $encryptedData = base64_decode($body);
+//        $decrypted = mcrypt_module_open(MCRYPT_RIJNDAEL_128, $key, $encryptedData, MCRYPT_MODE_CBC, $iv);
+        var_dump(strlen($encryptedData));die;
 
         $data['data'] = $decrypted;
         $data['leng'] = strlen($decrypted);
