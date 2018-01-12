@@ -36,8 +36,9 @@ class Base extends Api
         $decrypted = $this->pkcs5_unpad($decrypted);
         $decrypted = json_decode($decrypted, true);
 
-        var_dump(crc32($decrypted['data']));
-        var_dump($t2);
+        if (crc32($decrypted['data']) == $t2){
+
+        }
         die;
     }
 
