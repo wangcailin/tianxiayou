@@ -31,7 +31,7 @@ class Information extends Api
 
         $data['ad'] = $this->model->checkFormatData($version);
 
-        return json($data);
+        return api_json('0', 'ok', $data);
     }
 
 }
