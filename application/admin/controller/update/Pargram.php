@@ -19,20 +19,16 @@ class Pargram extends Backend
      * UpdatePargram模型对象
      */
     protected $model = null;
-    protected $searchFields = 'vercode,vername,isforce,link,file_md5';
+    protected $relationModel = null;
 
     public function _initialize()
     {
         parent::_initialize();
         $this->model = model('UpdatePargram');
+        $this->relationModel = model('UpdateKernel');
+        $this->assign('cpu_xList', $this->relationModel->cpu_xList);
+        $this->assign('ditchList', $this->relationModel->ditchList);
+        $this->assign('cpu_platformList', $this->relationModel->cpu_platformList);
 
     }
-    
-    /**
-     * 默认生成的控制器所继承的父类中有index/add/edit/del/multi五个方法
-     * 因此在当前控制器中可不用编写增删改查的代码,如果需要自己控制这部分逻辑
-     * 需要将application/admin/library/traits/Backend.php中对应的方法复制到当前控制器,然后进行修改
-     */
-    
-
 }

@@ -17,17 +17,32 @@ class UpdateKernel extends Model
     protected $updateTime = false;
     
     // 追加属性
-    protected $append = [
+    protected $append = [];
 
+    public $ditchList = [
+        0 => '官方',
+        1 => '百度',
+        2 => '测试',
+        3 => '小米',
+        4 => '奇虎',
+        5 => '应用宝',
+        6 => 'OPPO',
+        7 => 'partner_001',
+        8 => 'partner_002'
     ];
-    
+    public $cpu_xList = [
+        0 => '32位',
+        1 => '64位'
+    ];
+    public $cpu_platformList = [
+        0 => 'ARM',
+        1 => 'X86'
+    ];
 
-    
-
-
-
-
-
+    protected function setStartTimeAttr($value)
+    {
+        return $value && !is_numeric($value) ? strtotime($value) : $value;
+    }
 
 
 }

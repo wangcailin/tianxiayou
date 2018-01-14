@@ -15,13 +15,75 @@
     <div class="form-group">
         <label for="c-file_md5" class="control-label col-xs-12 col-sm-2">{:__('File_md5')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-file_md5" class="form-control" name="row[file_md5]" type="text">
+            <input id="c-file_md5" class="form-control" placeholder="不填写系统将读取文件" name="row[file_md5]" type="text">
         </div>
     </div>
     <div class="form-group">
         <label for="c-vercode" class="control-label col-xs-12 col-sm-2">{:__('Vercode')}:</label>
         <div class="col-xs-12 col-sm-8">
             <input id="c-vercode" class="form-control" name="row[vercode]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-ditch" class="control-label col-xs-12 col-sm-2">{:__('Ditch')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select id="c-ditch" data-rule="required" class="form-control selectpicker" name="row[ditch]">
+                {foreach name="ditchList" item="vo"}
+                <option value="{$key}" {in name="key" value=""}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-debug" class="control-label col-xs-12 col-sm-2">{:__('Debug')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[debug]', ['1'=>__('开启'), '0'=>__('关闭')], 0)}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-cpu_x" class="control-label col-xs-12 col-sm-2">{:__('Cpu_x')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select id="c-cpu_x" class="form-control selectpicker" name="row[cpu_x]">
+                <option value="" value="">请选择</option>
+                {foreach name="cpu_xList" item="vo"}
+                <option value="{$key}">{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-cpu_platform" class="control-label col-xs-12 col-sm-2">{:__('Cpu_platform')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select id="c-cpu_platform" class="form-control selectpicker" name="row[cpu_platform]">
+                <option value="" value="">请选择</option>
+                {foreach name="cpu_platformList" item="vo"}
+                <option value="{$key}">{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-brand" class="control-label col-xs-12 col-sm-2">{:__('Brand')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-brand" class="form-control" placeholder="不填写为不限制品牌" name="row[brand]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-uuid" class="control-label col-xs-12 col-sm-2">{:__('Uuid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-uuid" class="form-control" placeholder="不填写为所有用户升级" name="row[uuid]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-status" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[status]', ['1'=>__('正常'), '0'=>__('禁用')])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-start_time" class="control-label col-xs-12 col-sm-2">{:__('Start_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-start_time" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[start_time]" type="text" value="">
         </div>
     </div>
     <div class="form-group layer-footer">

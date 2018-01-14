@@ -24,6 +24,54 @@
             <input id="c-vercode" class="form-control" name="row[vercode]" type="text" value="{$row.vercode}">
         </div>
     </div>
+    <div class="form-group">
+        <label for="c-ditch" class="control-label col-xs-12 col-sm-2">{:__('Ditch')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-ditch" class="form-control" name="row[ditch]" type="number" value="{$row.ditch}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-debug" class="control-label col-xs-12 col-sm-2">{:__('Debug')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-debug" class="form-control" name="row[debug]" type="number" value="{$row.debug}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-cpu_x" class="control-label col-xs-12 col-sm-2">{:__('Cpu_x')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-cpu_x" class="form-control" name="row[cpu_x]" type="number" value="{$row.cpu_x}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-cpu_platform" class="control-label col-xs-12 col-sm-2">{:__('Cpu_platform')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-cpu_platform" class="form-control" name="row[cpu_platform]" type="number" value="{$row.cpu_platform}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-brand" class="control-label col-xs-12 col-sm-2">{:__('Brand')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-brand" class="form-control" name="row[brand]" type="text" value="{$row.brand}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-uuid" class="control-label col-xs-12 col-sm-2">{:__('Uuid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-uuid" class="form-control" name="row[uuid]" type="text" value="{$row.uuid}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-status" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-status" data-rule="required" class="form-control" name="row[status]" type="number" value="{$row.status}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-start_time" class="control-label col-xs-12 col-sm-2">{:__('Start_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-start_time" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[start_time]" type="text" value="{$row.start_time|datetime}">
+        </div>
+    </div>
     <div class="form-group layer-footer">
         <label class="control-label col-xs-12 col-sm-2"></label>
         <div class="col-xs-12 col-sm-8">

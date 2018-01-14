@@ -19,20 +19,13 @@ class Kernel extends Backend
      * UpdateKernel模型对象
      */
     protected $model = null;
-    protected $searchFields = 'link,key,file_md5,vercode';
 
     public function _initialize()
     {
         parent::_initialize();
         $this->model = model('UpdateKernel');
-
+        $this->assign('cpu_xList', $this->model->cpu_xList);
+        $this->assign('ditchList', $this->model->ditchList);
+        $this->assign('cpu_platformList', $this->model->cpu_platformList);
     }
-    
-    /**
-     * 默认生成的控制器所继承的父类中有index/add/edit/del/multi五个方法
-     * 因此在当前控制器中可不用编写增删改查的代码,如果需要自己控制这部分逻辑
-     * 需要将application/admin/library/traits/Backend.php中对应的方法复制到当前控制器,然后进行修改
-     */
-    
-
 }
