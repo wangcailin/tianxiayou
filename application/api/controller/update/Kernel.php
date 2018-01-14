@@ -21,7 +21,6 @@ class Kernel extends Api
     {
         parent::_initialize();
         $this->model = model('UpdateKernel');
-
     }
 
     public function getList()
