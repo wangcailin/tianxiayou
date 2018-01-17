@@ -25,8 +25,8 @@ class Kernel extends Api
 
     public function getList()
     {
-        $vercode = input('vercode');
-
+        $input = $this->inputData;
+        $vercode = $input['vercode'];
         return api_json('0', 'ok', $this->model->checkVersion($vercode));
     }
 }
