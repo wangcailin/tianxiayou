@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'Orderthird'                                            => '更多订单',
     'Update'                                                => '更新管理',
     'User id'                                               => '会员ID',
     'Username'                                              => '用户名',

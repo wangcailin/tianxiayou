@@ -28,12 +28,14 @@ class User extends Backend
         $this->model = model('User');
 
     }
-    
-    /**
-     * 默认生成的控制器所继承的父类中有index/add/edit/del/multi五个方法
-     * 因此在当前控制器中可不用编写增删改查的代码,如果需要自己控制这部分逻辑
-     * 需要将application/admin/library/traits/Backend.php中对应的方法复制到当前控制器,然后进行修改
-     */
-    
 
+    /**
+     * 详情
+     */
+    public function user_login($ids = null)
+    {
+        $row = model('UserLogin')->field('time')->where('uid', $ids)->order('time', 'DESC')->select();
+        $this->view->assign("row", $row);
+        return $this->view->fetch();
+    }
 }
