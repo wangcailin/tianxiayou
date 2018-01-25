@@ -26,7 +26,8 @@ class Information extends Api
 
     public function getList()
     {
-        $version = input('version');
+        $input = $this->inputData;
+        $version = $input['version'];
         $data    = [];
 
         $data['ad'] = $this->model->checkFormatData($version);

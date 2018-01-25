@@ -2,6 +2,18 @@
 
 // 公共助手函数
 
+if (!function_exists('create_string')) {
+    function create_string($length = 8)
+    {
+        $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        $password ='';
+        for ($i = 0; $i < $length; $i++) {
+            $password .= $chars[mt_rand(0, strlen($chars) - 1)];
+        }
+        return $password;
+    }
+}
+
 if (!function_exists('__'))
 {
 

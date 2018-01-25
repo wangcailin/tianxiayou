@@ -20,7 +20,7 @@ class User extends Api
     public function _initialize()
     {
         parent::_initialize();
-        $this->model = model('Information');
+        $this->model = model('User');
     }
 
     /**
@@ -29,7 +29,19 @@ class User extends Api
     public function registered()
     {
         $input = $this->inputData;
+        if (empty($input['mobile'])){
+            $input['mobile'] = null;
+        }
         $header = $this->inputHeader;
+        $data = [
+            'username'      => $input['username'],
+            'password'      => $input['password'],
+            'mobile'        => $input['mobile'],
+        ];
+        if ($this->model->save($data)){
+            return api_json('0', '注册成功', null);
+        }
+        return api_json('1', '注册失败', null);
     }
 
     /**
@@ -46,6 +58,11 @@ class User extends Api
     public function loginOut()
     {
         $input = $this->inputData;
+        if ($this->model->checkToken($input['username'], $input['token'])){
+            $this->model->clearToken($input['username']);
+            return api_json('0', '退出成功', null);
+        }
+        return api_json('1', '退出失败', null);
     }
 
     /**
@@ -54,6 +71,7 @@ class User extends Api
     public function forgotPassword()
     {
         $input = $this->inputData;
+
     }
 
     /**
@@ -70,6 +88,10 @@ class User extends Api
     public function userInfo()
     {
         $input = $this->inputData;
+        if ($res = $this->model->checkToken($input['username'], $input['token'])){
+            return api_json('0', 'ok', $res);
+        }
+        return api_json('1', '验证失败', null);
     }
 
     /**

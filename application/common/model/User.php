@@ -30,5 +30,40 @@ class User extends Model
         return $value && !is_numeric($value) ? strtotime($value) : $value;
     }
 
+    /**
+     * 验证用户token是否正确
+     * @param $username
+     * @param $token
+     * @return bool
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function checkToken($username, $token)
+    {
+        $where['username'] = $username;
+        $where['token']    = $token;
+        if($res = $this->where($where)->find()){
+            return $res;
+        }
+        return false;
+    }
+
+    /**
+     * 更新token
+     * @param $token
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function clearToken($username)
+    {
+        $res = $this->where('username', $username)->find();
+        if ($res){
+            $res->token = create_string('15');
+            $res->save();
+        }
+    }
+
 
 }
