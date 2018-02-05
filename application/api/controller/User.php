@@ -71,7 +71,14 @@ class User extends Api
     public function forgotPassword()
     {
         $input = $this->inputData;
-
+        $mobile = $input['mobile'];
+        if ($mobile){
+            $res = $this->model->field('username')->where('mobile', $mobile)->select();
+            if ($res){
+                return api_json('0', 'ok', $res);
+            }
+        }
+        return api_json('1', '手机号不存在', null);
     }
 
     /**
@@ -80,6 +87,14 @@ class User extends Api
     public function editPassword()
     {
         $input = $this->inputData;
+        $res = $this->model->where(['username'=>$input['username'],'token'=>$input['token']])->find();
+        if ($res){
+            $res->password = $input['password'];
+            if ($res->save()){
+                return api_json('0', '修改成功', null);
+            }
+        }
+        return api_json('1', '修改失败', null);
     }
 
     /**

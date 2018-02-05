@@ -29,7 +29,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'ditch', title: __('Ditch')},
                         {field: 'debug', title: __('Debug')},
                         {field: 'brand', title: __('Brand')},
-                        {field: 'status', title: __('Status'), formatter: Table.api.formatter.status},
+                        {field: 'status', title: __('Status'), formatter: Controller.api.formatter.status},
                         {field: 'start_time', title: __('Start_time'), formatter: Table.api.formatter.datetime},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
@@ -48,6 +48,15 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         api: {
             bindevent: function () {
                 Form.api.bindevent($("form[role=form]"));
+            },
+            formatter: {
+                status: function (value, row, index) {
+                    if (value == '1'){
+                        return '<span class="text-success"><i class="fa fa-circle"></i> 启用</span>';
+                    }else{
+                        return '<span class="text-grey"><i class="fa fa-circle"></i> 禁用</span>';
+                    }
+                }
             }
         }
     };
