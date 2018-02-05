@@ -106,7 +106,7 @@ class User extends Api
         if ($res = $this->model->checkToken($input['username'], $input['token'])){
             $info = model('UserInfo')->where(['uid'=>$res->id, 'vip'=>'1'])->find();
             if ($info){
-                $res = array_merge($res,$info)
+                $res = array_merge($res,$info);
             }
             return api_json('0', 'ok', $res);
         }
