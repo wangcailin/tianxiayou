@@ -104,6 +104,10 @@ class User extends Api
     {
         $input = $this->inputData;
         if ($res = $this->model->checkToken($input['username'], $input['token'])){
+            $info = model('UserInfo')->where(['uid'=>$res->id, 'vip'=>'1'])->find();
+            if ($info){
+                $res = array_merge($res,$info)
+            }
             return api_json('0', 'ok', $res);
         }
         return api_json('1', '验证失败', null);

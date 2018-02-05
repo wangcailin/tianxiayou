@@ -51,7 +51,7 @@ class User extends Model
 
     /**
      * 更新token
-     * @param $token
+     * @param $username
      * @throws \think\db\exception\DataNotFoundException
      * @throws \think\db\exception\ModelNotFoundException
      * @throws \think\exception\DbException
@@ -63,6 +63,11 @@ class User extends Model
             $res->token = create_string('15');
             $res->save();
         }
+    }
+
+    public function info()
+    {
+        return $this->hasOne('UserInfo', 'uid', 'id');
     }
 
 
