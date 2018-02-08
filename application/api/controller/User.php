@@ -37,7 +37,9 @@ class User extends Api
             'username'      => $input['username'],
             'password'      => $input['password'],
             'mobile'        => $input['mobile'],
+            'system'        => $header['systype'],
         ];
+
         if ($this->model->save($data)){
             return api_json('0', '注册成功', null);
         }
@@ -50,6 +52,7 @@ class User extends Api
     public function login()
     {
         $input = $this->inputData;
+
     }
 
     /**

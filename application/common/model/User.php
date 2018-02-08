@@ -49,6 +49,11 @@ class User extends Model
         return false;
     }
 
+    public function checkUser($uid = null)
+    {
+        
+    }
+
     /**
      * 更新token
      * @param $username
